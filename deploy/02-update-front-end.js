@@ -12,19 +12,24 @@ module.exports = async () => {
 }
 
 async function updateAbi() {
-    const raffle = await ethers.getContract("Raffle")
-    fs.writeFileSync(frontEndAbiFile, raffle.interface.format(ethers.utils.FormatTypes.json))
+    const counterContract = await ethers.getContract("Counter")
+    fs.writeFileSync(
+        frontEndAbiFile,
+        counterContract.interface.format(ethers.utils.FormatTypes.json)
+    )
 }
 
 async function updateContractAddresses() {
-    const raffle = await ethers.getContract("Raffle")
+    const counterContract = await ethers.getContract("Counter")
     const contractAddresses = JSON.parse(fs.readFileSync(frontEndContractsFile, "utf8"))
     if (network.config.chainId.toString() in contractAddresses) {
-        if (!contractAddresses[network.config.chainId.toString()].includes(raffle.address)) {
-            contractAddresses[network.config.chainId.toString()].push(raffle.address)
+        if (
+            !contractAddresses[network.config.chainId.toString()].includes(counterContract.address)
+        ) {
+            contractAddresses[network.config.chainId.toString()].push(counterContract.address)
         }
     } else {
-        contractAddresses[network.config.chainId.toString()] = [raffle.address]
+        contractAddresses[network.config.chainId.toString()] = [counterContract.address]
     }
     fs.writeFileSync(frontEndContractsFile, JSON.stringify(contractAddresses))
 }
