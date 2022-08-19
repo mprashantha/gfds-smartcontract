@@ -7,7 +7,7 @@ cd gfds-smartcontract
 yarn
 ```
 
-# Deploy:
+## Deploy:
 ```
 yarn hardhat deploy
 ```
@@ -17,9 +17,7 @@ yarn hardhat deploy
 yarn hardhat test
 ```
 
-### Test Coverage
+## Test Coverage
 ```
 yarn hardhat coverage
 ```
-
-# Thank you Patrick Collins!
