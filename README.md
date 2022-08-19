@@ -1,10 +1,12 @@
 # Global Federal Delivery System
 
-git clone this-project
-cd this-project-folder
-yarn
-
+# Initial Setup
 ```
+git clone https://github.com/mprashantha/gfds-smartcontract.git
+cd gfds-smartcontract
+yarn
+```
+
 # Deploy:
 ```
 yarn hardhat deploy
