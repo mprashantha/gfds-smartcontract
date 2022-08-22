@@ -40,14 +40,14 @@ module.exports = {
             url: POLYGON_MAINNET_RPC_URL,
             accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
             saveDeployments: true,
-            chainId: 137,
+            chainId: 80001,
         },
     },
     etherscan: {
         // yarn hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
         apiKey: {
             rinkeby: ETHERSCAN_API_KEY,
-            polygon: POLYGONSCAN_API_KEY,
+            polygonMumbai: POLYGONSCAN_API_KEY,
         },
     },
     gasReporter: {
@@ -59,7 +59,7 @@ module.exports = {
     },
     contractSizer: {
         runOnCompile: false,
-        only: ["Counter"],
+        only: ["GFDS"],
     },
     namedAccounts: {
         deployer: {

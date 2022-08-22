@@ -12,7 +12,7 @@ module.exports = async () => {
 }
 
 async function updateAbi() {
-    const counterContract = await ethers.getContract("Counter")
+    const counterContract = await ethers.getContract("GFDS")
     fs.writeFileSync(
         frontEndAbiFile,
         counterContract.interface.format(ethers.utils.FormatTypes.json)
@@ -20,7 +20,7 @@ async function updateAbi() {
 }
 
 async function updateContractAddresses() {
-    const counterContract = await ethers.getContract("Counter")
+    const counterContract = await ethers.getContract("GFDS")
     const contractAddresses = JSON.parse(fs.readFileSync(frontEndContractsFile, "utf8"))
     if (network.config.chainId.toString() in contractAddresses) {
         if (

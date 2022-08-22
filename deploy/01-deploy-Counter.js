@@ -12,7 +12,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         : VERIFICATION_BLOCK_CONFIRMATIONS
 
     const arguments = []
-    const counterContract = await deploy("Counter", {
+    const counterContract = await deploy("GFDS", {
         from: deployer,
         args: arguments,
         log: true,
@@ -20,11 +20,11 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     })
 
     // Verify the deployment
-    if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
+    if (!developmentChains.includes(network.name)) {
         log("Verifying...")
         await verify(counterContract.address, arguments)
     }
     log("----------------------------------------------------")
 }
 
-module.exports.tags = ["all", "Counter"]
+module.exports.tags = ["all", "GFDS"]
