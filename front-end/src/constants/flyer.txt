@@ -1,0 +1,28 @@
+const flyersList_file = [
+    {
+      flyerId: "1",
+      flyerAddress: "0x4C72a622b9c0359B3c5Af411Ac7f8f26FEaeb859",
+      startLocation: "Bangalore",
+      destLocation: "Chennai",
+      startLocCoordinate: "12.97981904636384, 77.59066501867005",
+      destLocCoordinate: "13.062797110984176, 80.22547944606329",
+      weightAllowed: "10",
+      pricePerKg: "0.002",
+      phone: "123-123-1234",
+      dateOfTravel: "22-Aug-2022",
+      anySpecification: "Only Cloths",
+    },
+    {
+      flyerId: "2",
+      flyerAddress: "0x4C72a622b9c0359B3c5Af411Ac7f8f26FEaeb859",
+      startLocation: "Bangalore",
+      destLocation: "London",
+      startLocCoordinate: "12.97981904636384, 77.59066501867005",
+      destLocCoordinate: "51.50346371078983, -0.11953476143849216",
+      weightAllowed: "5",
+      pricePerKg: "0.003",
+      phone: "123-456-1234",
+      dateOfTravel: "28-Aug-2022",
+      anySpecification: "Solid items only",
+    },
+  ];
